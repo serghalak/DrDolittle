@@ -5,10 +5,10 @@ import com.petclinic.drdolittle.model.Vet;
 
 import java.util.Set;
 
-public interface VetService {
+public interface VetService extends CrudService<Vet,Long > {
 
-    Vet findById(Long id);
-    Vet save(Vet vet);
-    Set<Vet> findAll();
+//    Vet findById(Long id);
+//    Vet save(Vet vet);
+//    Set<Vet> findAll();
 
 }
