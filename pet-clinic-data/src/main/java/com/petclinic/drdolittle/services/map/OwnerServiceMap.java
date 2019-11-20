@@ -3,9 +3,11 @@ package com.petclinic.drdolittle.services.map;
 import com.petclinic.drdolittle.model.Owner;
 import com.petclinic.drdolittle.services.CrudService;
 import com.petclinic.drdolittle.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long>
         implements OwnerService {
 
