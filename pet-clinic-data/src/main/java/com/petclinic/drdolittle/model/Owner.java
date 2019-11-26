@@ -1,6 +1,7 @@
 package com.petclinic.drdolittle.model;
 
 import javax.persistence.Entity;
+import java.util.HashSet;
 import java.util.Set;
 //@Entity
 public class Owner extends Person {
@@ -8,6 +9,7 @@ public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
+    private Set<Pet> pets=new HashSet<>();
 
     public String getAddress() {
         return address;
@@ -33,7 +35,7 @@ public class Owner extends Person {
         this.telephone = telephone;
     }
 
-    private Set<Pet> pets;
+
 
     public Set<Pet> getPets() {
         return pets;
