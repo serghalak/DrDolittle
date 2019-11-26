@@ -3,7 +3,7 @@ package com.petclinic.drdolittle.model;
 import javax.persistence.Entity;
 
 //@Entity
-public class Speciality extends BaseEntity {
+public class Specialty extends BaseEntity {
 
     private String description;
 

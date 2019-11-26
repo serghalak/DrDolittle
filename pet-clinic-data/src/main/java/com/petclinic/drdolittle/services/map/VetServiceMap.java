@@ -1,7 +1,8 @@
 package com.petclinic.drdolittle.services.map;
 
+import com.petclinic.drdolittle.model.Specialty;
 import com.petclinic.drdolittle.model.Vet;
-import com.petclinic.drdolittle.services.CrudService;
+import com.petclinic.drdolittle.services.SpecialtyService;
 import com.petclinic.drdolittle.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,12 @@ import java.util.Set;
 @Service
 public class VetServiceMap extends AbstractMapService<Vet,Long>
     implements VetService {
+
+    private SpecialtyService specialtyService;
+
+    public VetServiceMap(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
+    }
 
     @Override
     public Set<Vet> findAll() {
@@ -23,6 +30,14 @@ public class VetServiceMap extends AbstractMapService<Vet,Long>
 
     @Override
     public Vet save(Vet vet) {
+        if(vet.getSpecialities().size()>0){
+            vet.getSpecialities().forEach(specialty -> {
+                if(specialty.getId()==null){
+                    Specialty savedSpecialty = specialtyService.save(specialty);
+                    specialty.setId(savedSpecialty.getId());
+                }
+            });
+        }
         return super.save(vet);
     }
 
