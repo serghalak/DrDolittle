@@ -1,7 +1,8 @@
 package com.petclinic.drdolittle.model;
 
+import javax.persistence.Entity;
 import java.util.Set;
-
+//@Entity
 public class Owner extends Person {
 
     private String address;

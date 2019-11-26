@@ -1,7 +1,9 @@
 package com.petclinic.drdolittle.model;
 
+import javax.persistence.Entity;
 import java.util.Set;
 
+//@Entity
 public class Vet extends Person {
 
     private Set<Specialty> specialities;

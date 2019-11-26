@@ -3,7 +3,7 @@ package com.petclinic.drdolittle.model;
 import javax.persistence.Entity;
 import java.time.LocalDate;
 
-@Entity
+//@Entity
 public class Visit extends BaseEntity {
 
     private LocalDate date;
