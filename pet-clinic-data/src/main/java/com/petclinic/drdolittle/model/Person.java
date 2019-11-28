@@ -1,11 +1,15 @@
 package com.petclinic.drdolittle.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
 
-//@MappedSuperclass
+@MappedSuperclass
 public class Person extends BaseEntity{
 
+    @Column(name = "first_name")
+    @NotEmpty
     private String firstName;
     private String lastName;
 
