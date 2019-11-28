@@ -11,12 +11,14 @@ public class Pet extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "type_id",referencedColumnName = "id")
-    private PetType petType;
+    private PetType type;
 
     @ManyToOne
     @JoinColumn(name = "owner_id",referencedColumnName = "id")
     private Owner owner;
 
+    @OneToOne
+    private Visit visit;
 
     private LocalDate birthDate;
 
@@ -29,11 +31,11 @@ public class Pet extends BaseEntity {
     }
 
     public PetType getPetType() {
-        return petType;
+        return type;
     }
 
     public void setPetType(PetType petType) {
-        this.petType = petType;
+        this.type = petType;
     }
 
     public Owner getOwner() {

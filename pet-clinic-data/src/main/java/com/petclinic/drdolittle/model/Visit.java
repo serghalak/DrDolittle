@@ -1,13 +1,17 @@
 package com.petclinic.drdolittle.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDate;
 
-//@Entity
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
 
     private LocalDate date;
     private String description;
+
+
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "visits")
     private Pet pet;
 
     public LocalDate getDate() {
