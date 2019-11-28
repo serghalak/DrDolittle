@@ -7,11 +7,13 @@ import java.time.LocalDate;
 @Table(name = "visits")
 public class Visit extends BaseEntity {
 
+
     private LocalDate date;
     private String description;
 
 
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "visits")
+    @ManyToOne
+    @JoinColumn(name = "pet_id",referencedColumnName = "id")
     private Pet pet;
 
     public LocalDate getDate() {

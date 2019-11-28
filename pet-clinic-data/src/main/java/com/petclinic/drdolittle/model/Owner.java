@@ -42,8 +42,6 @@ public class Owner extends Person {
         this.telephone = telephone;
     }
 
-
-
     public Set<Pet> getPets() {
         return pets;
     }
