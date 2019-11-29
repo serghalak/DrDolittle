@@ -1,12 +1,7 @@
 package com.petclinic.drdolittle.bootstrap;
 
 import com.petclinic.drdolittle.model.*;
-import com.petclinic.drdolittle.services.OwnerService;
-import com.petclinic.drdolittle.services.PetTypeService;
-import com.petclinic.drdolittle.services.SpecialtyService;
-import com.petclinic.drdolittle.services.VetService;
-import com.petclinic.drdolittle.services.map.OwnerServiceMap;
-import com.petclinic.drdolittle.services.map.VetServiceMap;
+import com.petclinic.drdolittle.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,15 +14,18 @@ public class DataLoader implements CommandLineRunner {
     private VetService vetService;
     private PetTypeService petTypeService;
     private SpecialtyService specialtyService;
+    private VisitService visitService;
 
     public DataLoader(OwnerService ownerService
             , VetService vetService
             , PetTypeService petTypeService
-            , SpecialtyService specialtyService) {
+            , SpecialtyService specialtyService
+            , VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -95,12 +93,12 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-//        Visit catVisit = new Visit();
-//        catVisit.setPet(fionasCat);
-//        catVisit.setDate(LocalDate.now());
-//        catVisit.setDescription("Sneezy Kitty");
-//
-//        visitService.save(catVisit);
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 
