@@ -1,8 +1,16 @@
 package com.petclinic.drdolittle.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "specialties")
 public class Specialty extends BaseEntity {
@@ -15,19 +23,19 @@ public class Specialty extends BaseEntity {
             ,inverseJoinColumns = @JoinColumn(name = "vet_id",referencedColumnName = "id"))
     private Set<Vet> vets;
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Vet> getVets() {
-        return vets;
-    }
-
-    public void setVets(Set<Vet> vets) {
-        this.vets = vets;
-    }
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public Set<Vet> getVets() {
+//        return vets;
+//    }
+//
+//    public void setVets(Set<Vet> vets) {
+//        this.vets = vets;
+//    }
 }
