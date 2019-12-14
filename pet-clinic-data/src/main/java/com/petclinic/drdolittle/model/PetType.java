@@ -23,7 +23,12 @@ public class PetType extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "petType")
     private Set<Pet> pet;
 
-//    public String getName() {
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    //    public String getName() {
 //        return name;
 //    }
 //    public void setName(String name) {
