@@ -6,12 +6,14 @@ import com.petclinic.drdolittle.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
+
 
     private PetTypeRepository petTypeRepository;
 
@@ -45,4 +47,6 @@ public class PetTypeSDJpaService implements PetTypeService {
     public void deleteById(Long id) {
         petTypeRepository.deleteById(id);
     }
+
+
 }
