@@ -19,10 +19,11 @@ public class Pet extends BaseEntity {
 
 
     @Builder
-    public Pet(Long id, String name) {
+    public Pet(Long id, String name, LocalDate birthDate ) {
         super(id);
 
         this.name=name;
+        this.birthDate=birthDate;
     }
 
 
@@ -41,6 +42,9 @@ public class Pet extends BaseEntity {
     private Set<Visit> visits=new HashSet<>();
 
     private LocalDate birthDate;
+
+
+
 //
 //    public String getName() {
 //        return name;
@@ -66,13 +70,7 @@ public class Pet extends BaseEntity {
 //        this.owner = owner;
 //    }
 //
-//    public LocalDate getBirthDate() {
-//        return birthDate;
-//    }
-//
-//    public void setBirthDate(LocalDate birthDate) {
-//        this.birthDate = birthDate;
-//    }
+
 //
 //    public PetType getType() {
 //        return type;
