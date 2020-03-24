@@ -1,4 +1,4 @@
-package com.petclinic.drdolittle.controllers;
+package guru.springframework.sfgpetclinic.controllers;
 
 import com.petclinic.drdolittle.controllers.PetController;
 import com.petclinic.drdolittle.model.Owner;
